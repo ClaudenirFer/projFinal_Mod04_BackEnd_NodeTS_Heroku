@@ -1,4 +1,4 @@
-import { Genre } from "src/genres/entities/genres.entity";
+import { Genre } from 'src/genres/entities/genres.entity';
 
 export class Game {
   id?: number;

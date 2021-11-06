@@ -2,6 +2,7 @@ import { Type } from 'class-transformer';
 import {
   IsArray,
   IsBoolean,
+  IsInt,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -40,4 +41,28 @@ export class CreateUserDto extends User {
   @IsArray()
   @IsOptional()
   profiles?: CreateProfileDto[];
+
+  @IsOptional()
+  @IsInt()
+  idProf?: number;
+
+  // @IsInt({ each: true })
+  // @IsArray()
+  // gamesIds?: number[];
 }
+
+// {
+
+//   "name": "Renata",
+//   "lastname": "Souza",
+//   "email": "renata@gmail.com",
+//   "password": "Ab123@",
+//   "cpf": "513.741.190-67",
+//   "admin": true,
+//   "profiles": [
+//       {
+//           "nickname": "rere21",
+//           "image": "http://rere.com/perfil"
+//       }
+//   ]
+// }

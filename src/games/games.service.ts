@@ -14,10 +14,13 @@ export class GamesService {
   };
 
   create(dto: CreateGameDto) {
+    const genresIds = dto.genresIds;
+    delete dto.genresIds;
+
     const data: Prisma.GameCreateInput = {
       ...dto,
       genres: {
-        connect: dto.genres,
+        connect: genresIds.map((genreId) => ({ id: genreId })),
       },
     };
     return this.prisma.game.create({

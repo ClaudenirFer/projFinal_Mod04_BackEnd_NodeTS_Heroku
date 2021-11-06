@@ -8,10 +8,11 @@ import { GenresModule } from './genres/genres.module';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { PrismaModule } from './prisma/prisma.module';
+import { ProfilesModule } from './profiles/profiles.module';
 
 @Module({
   controllers: [AppController],
-  imports: [UserModule, GamesModule, GenresModule, AuthModule],
+  imports: [UserModule, GamesModule, GenresModule, AuthModule, ProfilesModule],
   providers: [AppService, { provide: APP_GUARD, useClass: JwtAuthGuard }],
 })
 export class AppModule {}

@@ -42,3 +42,20 @@ export class CreateGameDto extends Game {
   @IsArray()
   genresIds: number[];
 }
+
+// {
+
+//   "title": "Enduro",
+//   "cover": "https://majornelson.com/Insurgency.jpg",
+//   "description": "Lute em cenários devastados",
+//   "launchYear": "2021",
+//   "imdbRating": 9,
+//   "youtubeUrl": "sdfsf",
+//   "gamePlayUrl": "sfsfd",
+//   "genresIds": [
+
+//       1
+
+//   ]
+
+// }

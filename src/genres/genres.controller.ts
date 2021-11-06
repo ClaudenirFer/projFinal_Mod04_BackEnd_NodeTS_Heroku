@@ -1,3 +1,4 @@
+import { Prisma } from '.prisma/client';
 import {
   Body,
   Controller,
@@ -9,6 +10,7 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { Public } from 'src/auth/public.decorator';
 import { CreateGenreDto } from './dto/create-genre.dto';
 import { UpdateGenreDto } from './dto/update-genre.dto';
 import { GenresService } from './genres.service';
@@ -22,11 +24,13 @@ export class GenresController {
     return this.genresService.create(createGenreDto);
   }
 
+  @Public()
   @Get()
   findAll() {
     return this.genresService.findAll();
   }
 
+  @Public()
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.genresService.findOne(id);
