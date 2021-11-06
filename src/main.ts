@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     cors: {
-      origin: ['http://localhost:3000', 'http://localhost:3002'],
+      origin: ['http://localhost:3000', 'https://frontend-xbox-live.herokuapp.com'],
     },
   });
   app.useGlobalPipes(
